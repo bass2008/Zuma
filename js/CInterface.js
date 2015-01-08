@@ -9,7 +9,7 @@ function CInterface(){
     this._init = function(){
         
         _oScoreText = new createjs.Text(TEXT_SCORE +" 0","bold 38px Chewy", "#fff");
-        _oScoreText.x = 10;
+        _oScoreText.x = (CANVAS_WIDTH/2) - 30;
         _oScoreText.y = 10;
         _oScoreText.textAlign = "left";
         s_oStage.addChild(_oScoreText);
@@ -23,9 +23,12 @@ function CInterface(){
         oSprite.scaleX = oSprite.scaleY = 0.5;
         _oButExit = new CGfxButton(CANVAS_WIDTH - (oSprite.width/2) - 10,(oSprite.height/2) + 10,oSprite,true);
         //_oButExit.addEventListener(ON_MOUSE_UP, this._onExit, this);
-        
+
+        var oSpriteMoreGames = s_oSpriteLibrary.getSprite('but_more_games');
+        _ButMoreGames = new CGfxButton((oSpriteMoreGames.width/2) + 5,(oSpriteMoreGames.height/2) + 5,oSpriteMoreGames, true);
+
         if(DISABLE_SOUND_MOBILE === false || s_bMobile === false){
-            _oAudioToggle = new CGfxButton(_oButExit.getX() - oSprite.width,(oSprite.height/2) + 10,s_oSpriteLibrary.getSprite('setting_icon'), true);
+            _oAudioToggle = new CGfxButton(_oButExit.getX() - oSprite.width - 10,(oSprite.height/2) + 10,s_oSpriteLibrary.getSprite('setting_icon'), true);
             //_oAudioToggle = new CToggle(_oButExit.getX() - oSprite.width,(oSprite.height/2) + 10,s_oSpriteLibrary.getSprite('audio_icon'));
             //_oAudioToggle.addEventListener(ON_MOUSE_UP, this._onAudioToggle, this);
         }
