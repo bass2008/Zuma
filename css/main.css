@@ -1,0 +1,66 @@
+root {
+    display: block;
+}
+
+body{
+    background-color: #9a6600;
+    background-repeat: repeat-x;
+    background-position: top;   
+	background-image: url(../sprites/bg_tile.jpg); 
+	font-family: 'Chewy', cursive;
+}
+
+* {
+    user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+}
+
+::selection { background: transparent;color:inherit; }
+::-moz-selection { background: transparent;color:inherit; }
+
+#canvas{
+    width:1024px;
+    height: 768px;
+    
+    position: absolute;
+    
+}
+
+canvas {
+    image-rendering: optimizeSpeed;
+    image-rendering:-o-crisp-edges;
+    image-rendering:-webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+	-ms-touch-action: none;
+}
+
+.ani_hack{
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* mobile webkit */
+}
+
+/***************FONTS*******************/
+@font-face {
+    font-family: 'TrashHand';
+    src: url('trashhand-webfont.eot');
+    src:url('trashhand.svg#TrashHand') format('svg') ,
+        url('trashhand-webfont.eot?#iefix') format('embedded-opentype'),
+         url('trashhand-webfont.woff') format('woff'),
+         url('trashhand-webfont.ttf') format('truetype')
+         ;
+    font-weight: normal;
+    font-style: normal;
+
+}
