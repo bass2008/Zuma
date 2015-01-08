@@ -12,8 +12,8 @@ function CMenu(){
         _oButPlay.addEventListener(ON_MOUSE_UP, this._onButPlayRelease, this);
 
         if(DISABLE_SOUND_MOBILE === false || s_bMobile === false){
-            var oSprite = s_oSpriteLibrary.getSprite('audio_icon');
-            _oAudioToggle = new CToggle(CANVAS_WIDTH - (oSprite.width/2) + 20,(oSprite.height/2) + 20,oSprite);
+            var oSprite = s_oSpriteLibrary.getSprite('setting_icon');
+            _oAudioToggle = new CGfxButton(CANVAS_WIDTH - (oSprite.width/2) + 20,(oSprite.height/2) + 20,oSprite, true);
             _oAudioToggle.addEventListener(ON_MOUSE_UP, this._onAudioToggle, this);
 
             s_oSoundtrack = createjs.Sound.play("soundtrack",{ loop:100});

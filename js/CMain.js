@@ -84,10 +84,10 @@ function CMain(oData){
         s_oSpriteLibrary.init( this._onImagesLoaded,this._onAllImagesLoaded, this );
 
         s_oSpriteLibrary.addSprite("but_bg","./sprites/but_play_bg.png");
-        s_oSpriteLibrary.addSprite("but_exit","./sprites/but_exit.png");
-        //s_oSpriteLibrary.addSprite("but_exit","./sprites/but_exit.png");
+        s_oSpriteLibrary.addSprite("but_pause","./sprites/but_pause.png");
+        s_oSpriteLibrary.addSprite("but_more_games","./sprites/but_more_games.png");
         s_oSpriteLibrary.addSprite("bg_menu","./sprites/bg_menu.jpg");
-        s_oSpriteLibrary.addSprite("audio_icon","./sprites/audio_icon.png");
+        s_oSpriteLibrary.addSprite("setting_icon","./sprites/setting_icon.png");
         s_oSpriteLibrary.addSprite("hero","./sprites/hero.png");
         s_oSpriteLibrary.addSprite("hit_area","./sprites/hit_area.png");
         s_oSpriteLibrary.addSprite("explosion","./sprites/explosion.png");

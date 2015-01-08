@@ -19,13 +19,13 @@ function CInterface(){
         s_oStage.addChild(_oHitArea);
 	_oHitArea.on("pressup",function(evt){oParent._onTapScreen(evt.stageX,evt.stageY)}); 
         
-        var oSprite = s_oSpriteLibrary.getSprite('but_exit');
+        var oSprite = s_oSpriteLibrary.getSprite('but_pause');
         oSprite.scaleX = oSprite.scaleY = 0.5;
         _oButExit = new CGfxButton(CANVAS_WIDTH - (oSprite.width/2) - 10,(oSprite.height/2) + 10,oSprite,true);
         //_oButExit.addEventListener(ON_MOUSE_UP, this._onExit, this);
         
         if(DISABLE_SOUND_MOBILE === false || s_bMobile === false){
-            _oAudioToggle = new CGfxButton(_oButExit.getX() - oSprite.width,(oSprite.height/2) + 10,s_oSpriteLibrary.getSprite('audio_icon'), true);
+            _oAudioToggle = new CGfxButton(_oButExit.getX() - oSprite.width,(oSprite.height/2) + 10,s_oSpriteLibrary.getSprite('setting_icon'), true);
             //_oAudioToggle = new CToggle(_oButExit.getX() - oSprite.width,(oSprite.height/2) + 10,s_oSpriteLibrary.getSprite('audio_icon'));
             //_oAudioToggle.addEventListener(ON_MOUSE_UP, this._onAudioToggle, this);
         }
