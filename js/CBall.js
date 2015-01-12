@@ -4,14 +4,14 @@ function CBall(iIndexColor,oContainer){
     var _oSprite;
     var _oExplosion;
     var _oContainer;
-    
+
     this._init = function(iIndexColor,oContainer){
         _iIndex = iIndexColor;
         _iCurFotogram = 0;
         _oContainer = oContainer;
         
         var oSprite = s_oSpriteLibrary.getSprite('ball_'+_iIndex);
-        BALL_DIAMETER = oSprite.width;
+        BALL_DIAMETER = oSprite.height / 2;
         BALL_DIAMETER_SQUARE = BALL_DIAMETER * BALL_DIAMETER;
         BALL_RADIUS = BALL_DIAMETER/2;
         
@@ -19,7 +19,7 @@ function CBall(iIndexColor,oContainer){
                         images: [oSprite], 
                         // width, height & registration point of each sprite
                         frames: {width: BALL_DIAMETER, height: BALL_DIAMETER, regX: BALL_RADIUS, regY: BALL_RADIUS}, 
-                        animations: {move:[0,49]}
+                        animations: {move:[0,17]}
                     };
         
         var oSpriteSheet = new createjs.SpriteSheet(oData);
@@ -39,7 +39,7 @@ function CBall(iIndexColor,oContainer){
     
     this.nextFrame = function(){
         var iFrame;
-        if(_oSprite.currentFrame + 1 === 50){
+        if(_oSprite.currentFrame + 1 === 18){
                 iFrame = 0;
         }else{
                 iFrame = _oSprite.currentFrame + 1;
@@ -50,7 +50,7 @@ function CBall(iIndexColor,oContainer){
     this.prevFrame = function(){
         var iFrame;
         if(_oSprite.currentFrame-1 < 0){
-                iFrame = 49;
+                iFrame = 17;
         }else{
                iFrame = _oSprite.currentFrame - 1;
         }

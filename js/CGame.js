@@ -30,9 +30,11 @@ function CGame(oData){
     var _oCurveAttach;
     var _oExtraScoreAttach;
     var _oBgAttach;
-    
+    var _SetPosIndex;
+
     this._init = function(){
-        
+
+        _SetPosIndex = 16; // 24
         s_oBezier = new CBezier();
         
 	_oBgAttach = new createjs.Container();
@@ -251,7 +253,7 @@ function CGame(oData){
         var oBall = this.getRandomBall();
         _aBalls.unshift(oBall);
 
-        oBall.setPos(16,_aCurveMapData);
+        oBall.setPos(_SetPosIndex,_aCurveMapData);
        _iGameState = STATE_GAME_ROLL_IN;
     };
     
@@ -262,15 +264,18 @@ function CGame(oData){
     };
 
     this._pushNextBall = function(index,step){
+        console.log(index + " :" + step);
         var aTemp = new Array();
         aTemp.push(_aBalls[index]);
 
         for(var i = index;i < _aBalls.length - 1;++i){
-            if( (_aBalls[i + 1].getFotogram() - _aBalls[i].getFotogram()) <= 16){
-                if( (_aBalls[i + 1].getFotogram() - _aBalls[i].getFotogram() ) < 16){
-                        _aBalls[i + 1].setPos(_aBalls[i].getFotogram() + 16,_aCurveMapData);
+            if( (_aBalls[i + 1].getFotogram() - _aBalls[i].getFotogram()) <= 24){
+                if( (_aBalls[i + 1].getFotogram() - _aBalls[i].getFotogram() ) < 24){
+                        _aBalls[i + 1].setPos(_aBalls[i].getFotogram() + 24,_aCurveMapData);
+                    //console.log("if push next");
                 }
                 aTemp.push(_aBalls[i + 1]);
+                //console.log("else");
             }else{
                 break;
             }
@@ -309,7 +314,7 @@ function CGame(oData){
                 var oBall = s_oGame.getRandomBall();
                 _aBalls.unshift(oBall);
                 
-                oBall.setPos(16,_aCurveMapData);
+                oBall.setPos(_SetPosIndex,_aCurveMapData);
             }
         }
     };
@@ -681,7 +686,7 @@ function CGame(oData){
             if(_aBalls[0].getFotogram() === 32){
                 var oBall = this.getRandomBall();
                 _aBalls.unshift(oBall);
-                oBall.setPos(16,_aCurveMapData);
+                oBall.setPos(_SetPosIndex,_aCurveMapData);
             }
         }else{
             _iGameState = -1;
