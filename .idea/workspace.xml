@@ -34,20 +34,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CLevelSettings.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CLevelSettings.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/CLevelSettings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="2567">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.72424245" vertical-offset="100" max-vertical-offset="2567">
+              <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CGame.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CGame.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/CGame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13385826" vertical-offset="4420" max-vertical-offset="13532">
+            <state vertical-scroll-proportion="-3.4" vertical-offset="4420" max-vertical-offset="13532">
               <caret line="265" column="46" selection-start-line="265" selection-start-column="46" selection-end-line="265" selection-end-column="46" />
               <folding />
             </state>
@@ -637,14 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/CLevelSettings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="2584">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/CMain.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="962" max-vertical-offset="3689">
@@ -663,8 +655,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/CGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13385826" vertical-offset="4420" max-vertical-offset="13532">
+        <state vertical-scroll-proportion="-3.4" vertical-offset="4420" max-vertical-offset="13532">
           <caret line="265" column="46" selection-start-line="265" selection-start-column="46" selection-end-line="265" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/CLevelSettings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72424245" vertical-offset="100" max-vertical-offset="2567">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
           <folding />
         </state>
       </provider>

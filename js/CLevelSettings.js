@@ -32,7 +32,7 @@ function CLevelSettings(){
         _aBallNumber = new Array();
         
         //LEVEL 1
-        _aBallNumber[0] = 60;
+        _aBallNumber[0] = 20;
         
         //LEVEL 2
         _aBallNumber[1] = 80;
