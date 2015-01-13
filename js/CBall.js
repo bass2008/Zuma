@@ -13,8 +13,8 @@ function CBall(iIndexColor,oContainer){
         var oSprite = s_oSpriteLibrary.getSprite('ball_'+_iIndex);
         BALL_DIAMETER = oSprite.height / 2;
         BALL_DIAMETER_SQUARE = BALL_DIAMETER * BALL_DIAMETER;
-        BALL_RADIUS = BALL_DIAMETER/2;
-        
+        BALL_RADIUS = Math.round(BALL_DIAMETER/2);
+
         var oData = {   
                         images: [oSprite], 
                         // width, height & registration point of each sprite
