@@ -89,11 +89,13 @@ function CMain(oData){
         s_oSpriteLibrary.addSprite("bg_menu","./sprites/bg_menu.jpg");
         s_oSpriteLibrary.addSprite("setting_icon","./sprites/setting_icon.png");
         s_oSpriteLibrary.addSprite("hero","./sprites/hero.png");
+        s_oSpriteLibrary.addSprite("heroBack","./sprites/heroBack.png");
         s_oSpriteLibrary.addSprite("hit_area","./sprites/hit_area.png");
         s_oSpriteLibrary.addSprite("explosion","./sprites/explosion.png");
         s_oSpriteLibrary.addSprite("msg_box","./sprites/msg_box.png");
         s_oSpriteLibrary.addSprite("extra_score","./sprites/extra_score.png");
         s_oSpriteLibrary.addSprite("end_path","./sprites/end_path.png");
+        s_oSpriteLibrary.addSprite("prop","./sprites/prop.png");
         
         for(var i=0;i<BALL_COLORS;i++){
             s_oSpriteLibrary.addSprite("ball_"+i,"./sprites/ball_"+i+".png");

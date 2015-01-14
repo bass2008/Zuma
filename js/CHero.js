@@ -10,8 +10,22 @@ function CHero(){
     var _oMaskCurBall;
     var _oMaskNextBall;
     var _oContainer;
+    var _oContainerBack;
     
-    this._init = function(){
+    this._init = function() {
+        //init back 'heroBack'
+        var oSpriteBack = s_oSpriteLibrary.getSprite('heroBack');
+        _oContainerBack = new createjs.Container();
+        _oContainerBack.regX = oSpriteBack.width/2;
+        _oContainerBack.regY = oSpriteBack.height/2;
+        s_oStage.addChild(_oContainerBack);
+
+        var oSpriteBackBitmap = new createjs.Bitmap(oSpriteBack);
+        oSpriteBackBitmap.x = 0;
+        oSpriteBackBitmap.y = 0;
+        _oContainerBack.addChild(oSpriteBackBitmap);
+
+        //init container
         var oSprite = s_oSpriteLibrary.getSprite('hero');
         _oContainer = new createjs.Container();
         _oContainer.regX = oSprite.width/2;
@@ -47,7 +61,10 @@ function CHero(){
 
         _oContainer.x = oPos.x;
         _oContainer.y = oPos.y;
-        
+
+        _oContainerBack.x = oPos.x;
+        _oContainerBack.y = oPos.y;
+
         _aColorsAvailable = new Array();
         for(var i=0;i<_iBallColors;i++){
             _aColorsAvailable[i] = true;

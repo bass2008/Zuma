@@ -23,6 +23,7 @@ function CGame(oData){
     
     var _oCurve = null;
     var _oEndSprite = null;
+    var _oEndSpriteProp = null;
     var _oHero;
     var _oBg;
     var _oInterface;
@@ -96,6 +97,7 @@ function CGame(oData){
         if(_oCurve !== null){
             _oCurveAttach.removeChild(_oCurve);
             _oCurveAttach.removeChild(_oEndSprite);
+            _oCurveAttach.removeChild(_oEndSpriteProp);
         }
         this._initCurve();
         this._initBall();
@@ -239,6 +241,7 @@ function CGame(oData){
         _oCurveAttach.addChild(_oCurve);
         
         var iLen = _aCurveMapData.length;
+
         var oSprite = s_oSpriteLibrary.getSprite('end_path');
         _oEndSprite = new createjs.Bitmap(oSprite);
         _oEndSprite.x = _aCurveMapData[iLen - 9][0];
@@ -246,6 +249,14 @@ function CGame(oData){
         _oEndSprite.regX = oSprite.width/2;
         _oEndSprite.regY = oSprite.height/2;
         _oCurveAttach.addChild(_oEndSprite);
+
+        var oSpriteProp = s_oSpriteLibrary.getSprite('prop');
+        _oEndSpriteProp = new createjs.Bitmap(oSpriteProp);
+        _oEndSpriteProp.x = _aCurveMapData[iLen - 9][0];
+        _oEndSpriteProp.y = _aCurveMapData[iLen - 9][1];
+        _oEndSpriteProp.regX = oSpriteProp.width/2;
+        _oEndSpriteProp.regY = oSpriteProp.height/2;
+        _oCurveAttach.addChild(_oEndSpriteProp);
     };
     
     this._initBall = function(){
@@ -701,7 +712,6 @@ function CGame(oData){
             _iGameState = STATE_GAME_BALL_MOVE;
         }
     };
-    
     this._updateShooting = function(){
         if(_aBallShooted.length !== 0){
             for(var i = 0;i<_aBallShooted.length;++i){
@@ -745,12 +755,18 @@ function CGame(oData){
             _iGameState = -1;
         }
     };
-    
+
+    this.rotateProp = function() {
+        if(_oEndSpriteProp != null)
+            _oEndSpriteProp.rotation = _oEndSpriteProp.rotation + 10;
+    }
+
     this.update = function(){
         if(_bUpdate === false){
             return;
         }
 
+        this.rotateProp();
 
         if(_bAttractBall === true){
             this._attract();
