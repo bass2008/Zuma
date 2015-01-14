@@ -18,7 +18,7 @@ function CLevelSettings(){
         _aBallSpeed = new Array();
        
         //LEVEL 1
-        _aBallSpeed[0] = 50;
+        _aBallSpeed[0] = 30;
         
         //LEVEL 2
         _aBallSpeed[1] = 40;
@@ -32,7 +32,7 @@ function CLevelSettings(){
         _aBallNumber = new Array();
         
         //LEVEL 1
-        _aBallNumber[0] = 10;
+        _aBallNumber[0] = 20;
         
         //LEVEL 2
         _aBallNumber[1] = 80;

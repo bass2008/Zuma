@@ -275,7 +275,7 @@ function CGame(oData){
     };
 
     this._pushNextBall = function(index,step){
-
+        console.log("push");
         var aTemp = new Array();
         aTemp.push(_aBalls[index]);
 
@@ -318,6 +318,7 @@ function CGame(oData){
     };
     
     this.onIntroduceBall = function(){
+        console.log("introduce");
         if(_aBalls.length !== 0){
             s_oGame._pushNextBall(0,1);
 
@@ -359,6 +360,7 @@ function CGame(oData){
     };
     
     this._insertBall = function(oBall,iIndex,szLabel){
+        console.log("insert ball");
         var iPosX;
         var iPosY;
         var iInsertPos;
@@ -437,7 +439,7 @@ function CGame(oData){
 
             if(_aBalls[i].getIndex() === iColorIndex){
                 
-                if(_aBalls[i].getFotogram() - _aBalls[i - 1].getFotogram() <= 17){
+                if(_aBalls[i].getFotogram() - _aBalls[i - 1].getFotogram() <= BALL_RADIUS + 3){
                     aTemp.push(_aBalls[i]);
                     ++i;
                 }else if(!bClear){
@@ -452,7 +454,7 @@ function CGame(oData){
         var j = iIndex - 1;
         while(_aBalls[j]){
             if(_aBalls[j].getIndex() === iColorIndex){
-                    if(_aBalls[j + 1].getFotogram() - _aBalls[j].getFotogram() <=17){
+                    if(_aBalls[j + 1].getFotogram() - _aBalls[j].getFotogram() <= BALL_RADIUS + 3){
                         aTemp.push(_aBalls[j]);
                         --j;
                     }else if(!bClear){
@@ -474,16 +476,17 @@ function CGame(oData){
     };
     
     this._attract = function(){
+        console.log("attract");
         if(_aBallAttracted.length !== 0){
             for(var i = 0;i<_aBallAttracted.length;++i){
                 var iIndex = _aBalls.indexOf(_aBallAttracted[i]);
                 if(iIndex !== -1 && _aBalls[iIndex - 1]){
                     if(_aBallAttracted[i].getIndex() === _aBalls[iIndex - 1].getIndex() ){
                         var iSteps = (_aBallAttracted[i].getFotogram()-_aBalls[iIndex - 1].getFotogram()) > 19?3:(_aBallAttracted[i].getFotogram()
-                                                                    - _aBalls[iIndex - 1].getFotogram() - 16);
+                                                                    - _aBalls[iIndex - 1].getFotogram() - BALL_RADIUS);
                         this._pushNextBall(iIndex,-iSteps);
 
-                        if( (_aBallAttracted[i].getFotogram() - _aBalls[iIndex - 1].getFotogram() )<= 16){
+                        if( (_aBallAttracted[i].getFotogram() - _aBalls[iIndex - 1].getFotogram() )<= BALL_RADIUS){
                                 _iMultiplierCombo++;
                                 _aBallAttracted.splice(i,1);
 
@@ -689,20 +692,18 @@ function CGame(oData){
     };
     
     this._updateRollIn = function(){
+        console.log("updateRollIN");
         if(_aBalls.length < BALL_ROLLING_IN){
-            console.log("1");
             for(var i = 0;i < _aBalls.length;++i){
                 _aBalls[i].increasePos(4,_aCurveMapData);
             }
 
             if(_aBalls[0].getFotogram() === 32){
-                console.log("2");
                 var oBall = this.getRandomBall();
                 _aBalls.unshift(oBall);
                 oBall.setPos(_SetPosIndex,_aCurveMapData);
             }
         }else{
-            console.log("3");
             _iGameState = -1;
 
             _aBallShooted = new Array();
@@ -758,7 +759,7 @@ function CGame(oData){
 
     this.rotateProp = function() {
         if(_oEndSpriteProp != null)
-            _oEndSpriteProp.rotation = _oEndSpriteProp.rotation + 10;
+            _oEndSpriteProp.rotation = _oEndSpriteProp.rotation - 20;
     }
 
     this.update = function(){
