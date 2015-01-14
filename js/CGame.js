@@ -146,7 +146,8 @@ function CGame(oData){
         
         var oCurveGfx = new createjs.Graphics();
         oCurveGfx.setStrokeStyle(2);
-        oCurveGfx.beginStroke("#fff");
+        // Line
+        oCurveGfx.beginStroke("rgba(255,0,128, 0.3)");
         oCurveGfx.moveTo(_aCurve[0][0],_aCurve[0][1]);
         for(var i = 1;i<_aCurve.length - 2;++i){
             var iX = (_aCurve[i][0] + _aCurve[i+1][0])/2;
@@ -177,8 +178,8 @@ function CGame(oData){
         var oFirstPoint;
 
         oCurveGfx.setStrokeStyle(4);
-        oCurveGfx.beginStroke("#00a29b");
-        oCurveGfx.beginFill("#221910");
+        oCurveGfx.beginStroke("rgba(128,128,0, 0.3)");
+        oCurveGfx.beginFill("rgba(0,0,255, 0.1)");
 
         // DRAW LEFT CURVE
         oPoint = { x : (_aCurveMapData[1][0] - _aCurveMapData[0][0]), y : (_aCurveMapData[1][1] - _aCurveMapData[0][1])  };
