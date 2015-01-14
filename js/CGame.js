@@ -695,15 +695,18 @@ function CGame(oData){
         console.log("updateRollIN");
         if(_aBalls.length < BALL_ROLLING_IN){
             for(var i = 0;i < _aBalls.length;++i){
-                _aBalls[i].increasePos(4,_aCurveMapData);
+                _aBalls[i].increasePos(8,_aCurveMapData);
+                console.log("1");
             }
 
-            if(_aBalls[0].getFotogram() === 32){
+            if(_aBalls[0].getFotogram() > BALL_RADIUS * 1.5) {
+                console.log("2");
                 var oBall = this.getRandomBall();
                 _aBalls.unshift(oBall);
                 oBall.setPos(_SetPosIndex,_aCurveMapData);
             }
         }else{
+            console.log("3");
             _iGameState = -1;
 
             _aBallShooted = new Array();
