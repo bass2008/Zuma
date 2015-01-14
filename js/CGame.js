@@ -264,14 +264,14 @@ function CGame(oData){
     };
 
     this._pushNextBall = function(index,step){
-        console.log(index + " :" + step);
+
         var aTemp = new Array();
         aTemp.push(_aBalls[index]);
 
         for(var i = index;i < _aBalls.length - 1;++i){
-            if( (_aBalls[i + 1].getFotogram() - _aBalls[i].getFotogram()) <= 24){
-                if( (_aBalls[i + 1].getFotogram() - _aBalls[i].getFotogram() ) < 24){
-                        _aBalls[i + 1].setPos(_aBalls[i].getFotogram() + 24,_aCurveMapData);
+            if( (_aBalls[i + 1].getFotogram() - _aBalls[i].getFotogram()) <= BALL_RADIUS){
+                if( (_aBalls[i + 1].getFotogram() - _aBalls[i].getFotogram() ) < BALL_RADIUS){
+                        _aBalls[i + 1].setPos(_aBalls[i].getFotogram() +  BALL_RADIUS,_aCurveMapData);
                     //console.log("if push next");
                 }
                 aTemp.push(_aBalls[i + 1]);
@@ -310,11 +310,11 @@ function CGame(oData){
         if(_aBalls.length !== 0){
             s_oGame._pushNextBall(0,1);
 
-            if(_aBalls[0].getFotogram() === 32 && _iTotalBall !== 0){
+            if(_aBalls[0].getFotogram() === BALL_RADIUS * 2 && _iTotalBall !== 0){
                 var oBall = s_oGame.getRandomBall();
                 _aBalls.unshift(oBall);
                 
-                oBall.setPos(_SetPosIndex,_aCurveMapData);
+                oBall.setPos(BALL_RADIUS,_aCurveMapData);
             }
         }
     };
@@ -679,16 +679,19 @@ function CGame(oData){
     
     this._updateRollIn = function(){
         if(_aBalls.length < BALL_ROLLING_IN){
+            console.log("1");
             for(var i = 0;i < _aBalls.length;++i){
                 _aBalls[i].increasePos(4,_aCurveMapData);
             }
 
             if(_aBalls[0].getFotogram() === 32){
+                console.log("2");
                 var oBall = this.getRandomBall();
                 _aBalls.unshift(oBall);
                 oBall.setPos(_SetPosIndex,_aCurveMapData);
             }
         }else{
+            console.log("3");
             _iGameState = -1;
 
             _aBallShooted = new Array();
